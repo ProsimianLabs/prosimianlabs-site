@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1024" y2="1024" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#7C3AED"/>
+      <stop offset="1" stop-color="#A78BFA"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Rounded-square background with brand gradient -->
+  <rect x="0" y="0" width="1024" height="1024" rx="220" ry="220" fill="url(#bg)"/>
+
+  <!-- Subtle inner highlight -->
+  <rect x="1" y="1" width="1022" height="1022" rx="219" ry="219"
+        fill="none" stroke="white" stroke-opacity="0.08" stroke-width="2"/>
+
+  <!-- Layers mark — absolute coordinates, 500px wide, centered in 1024 canvas -->
+  <g fill="none" stroke="white" stroke-width="47" stroke-linejoin="round" stroke-linecap="round">
+    <!-- Top rhombus (closed) -->
+    <polygon points="512,324.5 345.3,418.25 512,512 678.7,418.25"/>
+    <!-- Middle V (open) -->
+    <polyline points="345.3,512 512,605.75 678.7,512"/>
+    <!-- Bottom V (open) -->
+    <polyline points="345.3,605.75 512,699.5 678.7,605.75"/>
+  </g>
+</svg>
