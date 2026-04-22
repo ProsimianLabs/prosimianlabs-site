@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Prosimian Labs — software for the creator economy</title>
+  <meta name="description" content="Prosimian Labs LLC builds small, focused software products: CallSaver (AI voice receptionist for service businesses) and StackPass (paid Discord communities for Substack creators).">
+  <meta property="og:title" content="Prosimian Labs">
+  <meta property="og:description" content="We build small, focused software products.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://prosimianlabs.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Calistoga&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #faf8f4;
+      --surface: #ffffff;
+      --fg: #1a1a1a;
+      --muted: #6b6b6b;
+      --border: #e6e3dc;
+      --accent: #1a1a1a;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body {
+      background: var(--bg);
+      color: var(--fg);
+      font-family: "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.5;
+    }
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+    header {
+      padding: 2rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .wordmark {
+      font-family: "Calistoga", ui-serif, Georgia, serif;
+      font-size: 1.5rem;
+      color: var(--fg);
+      letter-spacing: -0.01em;
+    }
+    main { padding: 4rem 0; }
+    .hero h1 {
+      font-family: "Calistoga", ui-serif, Georgia, serif;
+      font-size: clamp(2.5rem, 6vw, 3.75rem);
+      line-height: 1.05;
+      color: var(--fg);
+      font-weight: 400;
+    }
+    .hero p {
+      margin-top: 1.25rem;
+      font-size: 1.125rem;
+      color: var(--muted);
+      max-width: 520px;
+      line-height: 1.55;
+    }
+    .products {
+      margin-top: 3.5rem;
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: 1fr;
+    }
+    @media (min-width: 640px) {
+      .products { grid-template-columns: 1fr 1fr; }
+    }
+    .product {
+      display: block;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1.5rem;
+      text-decoration: none;
+      color: inherit;
+      transition: border-color .15s, transform .15s;
+    }
+    .product:hover {
+      border-color: #cfc8ba;
+      transform: translateY(-1px);
+    }
+    .product-name {
+      font-family: "Calistoga", ui-serif, Georgia, serif;
+      font-size: 1.25rem;
+      color: var(--fg);
+    }
+    .product-tagline {
+      margin-top: .5rem;
+      font-size: .9375rem;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+    .product-link {
+      margin-top: 1rem;
+      font-size: .8125rem;
+      font-weight: 500;
+      color: var(--fg);
+      display: inline-flex;
+      align-items: center;
+      gap: .25rem;
+    }
+    .product-link::after {
+      content: "→";
+      transition: transform .15s;
+    }
+    .product:hover .product-link::after {
+      transform: translateX(2px);
+    }
+    .about {
+      margin-top: 4rem;
+      padding: 2rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+    }
+    .about h2 {
+      font-family: "Calistoga", ui-serif, Georgia, serif;
+      font-size: 1.25rem;
+      margin-bottom: .75rem;
+      font-weight: 400;
+    }
+    .about p {
+      color: var(--muted);
+      font-size: .9375rem;
+      line-height: 1.6;
+    }
+    .about p + p { margin-top: .75rem; }
+    footer {
+      padding: 3rem 0 2rem;
+      border-top: 1px solid var(--border);
+      margin-top: 4rem;
+    }
+    .footer-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      font-size: .875rem;
+      color: var(--muted);
+    }
+    @media (min-width: 640px) {
+      .footer-grid { flex-direction: row; justify-content: space-between; }
+    }
+    .footer-grid strong { color: var(--fg); font-weight: 500; }
+    .footer-grid a { color: inherit; }
+    .address { line-height: 1.55; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="wordmark">Prosimian Labs</div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h1>Small, focused software<br>for the creator economy.</h1>
+      <p>Prosimian Labs is an independent software company based in Wyoming. We build products we&rsquo;d want to use ourselves — shipped as they&rsquo;re ready, not when a roadmap says so.</p>
+    </section>
+
+    <section class="products">
+      <a class="product" href="https://callsaver.ai" target="_blank" rel="noopener">
+        <div class="product-name">CallSaver</div>
+        <p class="product-tagline">AI voice receptionist for service businesses. Never miss a call. Never miss a customer.</p>
+        <span class="product-link">Visit callsaver.ai</span>
+      </a>
+      <a class="product" href="https://getstackpass.com" target="_blank" rel="noopener">
+        <div class="product-name">StackPass</div>
+        <p class="product-tagline">Paid Discord communities for Substack creators. Automatic role sync, no spreadsheets.</p>
+        <span class="product-link">Visit getstackpass.com</span>
+      </a>
+    </section>
+
+    <section class="about">
+      <h2>About</h2>
+      <p>Prosimian Labs LLC is a single-member software company operating out of Wyoming. Alex Sikand is the founder and builder. We don&rsquo;t take outside capital, and we don&rsquo;t scale products past the point where they stop being fun to work on.</p>
+      <p>Questions, partnerships, or press inquiries &mdash; email <a href="mailto:hello@prosimianlabs.com">hello@prosimianlabs.com</a>.</p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div class="address">
+        <strong>Prosimian Labs LLC</strong><br>
+        30 N Gould St, Ste N<br>
+        Sheridan, WY 82801<br>
+        United States
+      </div>
+      <div>
+        <strong>Contact</strong><br>
+        <a href="mailto:hello@prosimianlabs.com">hello@prosimianlabs.com</a><br>
+        &nbsp;<br>
+        © <span id="year"></span> Prosimian Labs LLC
+      </div>
+    </div>
+  </footer>
+
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>
