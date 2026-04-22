@@ -10,10 +10,9 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://prosimianlabs.com">
 
-  <!-- All 5 font stacks preloaded. Only the active one is used per CSS vars. -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700&family=Inter:wght@300;400;500;600;700;900&family=JetBrains+Mono:wght@400;500;700;800&family=Archivo+Black&family=Space+Grotesk:wght@300;400;500;600;700&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root {
@@ -28,41 +27,8 @@
       --accent: #e88610;
       --accent-cool: #28afc6;
 
-      /* Default font set — "Editorial Warm" */
-      --font-display: "Fraunces", ui-serif, Georgia, serif;
-      --font-body: "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
-      --display-weight: 500;
-      --display-letter-spacing: -0.015em;
-    }
-
-    /* === 5 FONT VARIATIONS === */
-    body[data-font="editorial"] {
-      --font-display: "Fraunces", ui-serif, Georgia, serif;
-      --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
-      --display-weight: 500;
-      --display-letter-spacing: -0.015em;
-    }
-    body[data-font="terminal"] {
-      --font-display: "JetBrains Mono", ui-monospace, monospace;
-      --font-body: "JetBrains Mono", ui-monospace, monospace;
-      --display-weight: 700;
-      --display-letter-spacing: -0.03em;
-    }
-    body[data-font="swiss"] {
-      --font-display: "Inter", ui-sans-serif, system-ui, sans-serif;
-      --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
-      --display-weight: 900;
-      --display-letter-spacing: -0.04em;
-    }
-    body[data-font="brutalist"] {
-      --font-display: "Archivo Black", ui-sans-serif, system-ui, sans-serif;
-      --font-body: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
-      --display-weight: 400; /* Archivo Black has one weight */
-      --display-letter-spacing: -0.025em;
-    }
-    body[data-font="space"] {
-      --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
-      --font-body: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+      --font-display: "Space Grotesk", ui-sans-serif, system-ui, -apple-system, sans-serif;
+      --font-body: "IBM Plex Sans", ui-sans-serif, system-ui, -apple-system, sans-serif;
       --display-weight: 600;
       --display-letter-spacing: -0.02em;
     }
@@ -95,10 +61,10 @@
     .hero-logo {
       display: block;
       margin: 0 auto 2rem;
-      width: 140px;
-      height: 140px;
-      border-radius: 28px;
-      box-shadow: 0 12px 48px -12px rgba(232, 134, 16, 0.18);
+      width: 260px;
+      height: 260px;
+      border-radius: 48px;
+      box-shadow: 0 20px 64px -16px rgba(232, 134, 16, 0.22);
     }
     .hero h1 {
       font-family: var(--font-display);
@@ -224,109 +190,6 @@
     .footer-grid a:hover { color: var(--fg); }
     .address { line-height: 1.6; }
 
-    /* === FONT SWITCHER WIDGET === */
-    .font-switcher {
-      position: fixed;
-      bottom: 1rem;
-      left: 1rem;
-      z-index: 50;
-      font-family: "JetBrains Mono", ui-monospace, monospace;
-      font-size: 12px;
-      color: var(--fg);
-    }
-    .fs-toggle {
-      background: var(--surface-2);
-      border: 1px solid var(--border-strong);
-      color: var(--fg);
-      border-radius: 999px;
-      padding: 0.5rem 0.875rem;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      transition: background 150ms ease, border-color 150ms ease;
-      font-family: inherit;
-      font-size: inherit;
-    }
-    .fs-toggle:hover { background: var(--surface); border-color: var(--accent); }
-    .fs-toggle::before {
-      content: "";
-      width: 6px;
-      height: 6px;
-      border-radius: 999px;
-      background: var(--accent);
-    }
-    .fs-panel {
-      background: var(--surface-2);
-      border: 1px solid var(--border-strong);
-      border-radius: 12px;
-      width: 280px;
-      box-shadow: 0 20px 60px -16px rgba(0,0,0,0.6);
-      overflow: hidden;
-    }
-    .fs-panel header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0.625rem 0.875rem;
-      border-bottom: 1px solid var(--border);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      font-size: 10.5px;
-      color: var(--muted);
-    }
-    .fs-panel header button {
-      background: none;
-      border: none;
-      color: var(--muted);
-      cursor: pointer;
-      font-size: 14px;
-      line-height: 1;
-      padding: 0;
-    }
-    .fs-panel header button:hover { color: var(--fg); }
-    .fs-option {
-      display: block;
-      width: 100%;
-      text-align: left;
-      background: none;
-      border: none;
-      padding: 0.75rem 0.875rem;
-      color: var(--fg);
-      cursor: pointer;
-      border-bottom: 1px solid var(--border);
-      font-family: inherit;
-      font-size: inherit;
-      transition: background 120ms ease;
-    }
-    .fs-option:last-child { border-bottom: none; }
-    .fs-option:hover { background: var(--surface); }
-    .fs-option[aria-pressed="true"] {
-      background: color-mix(in srgb, var(--accent) 12%, transparent);
-    }
-    .fs-option-title {
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
-      font-weight: 500;
-      color: var(--fg);
-    }
-    .fs-option-title .dot {
-      width: 4px; height: 4px; border-radius: 999px; background: var(--muted);
-    }
-    .fs-option[aria-pressed="true"] .fs-option-title .dot { background: var(--accent); }
-    .fs-option-preview {
-      margin-top: 0.25rem;
-      font-size: 14px;
-      color: var(--muted-strong);
-      letter-spacing: -0.01em;
-    }
-    .fs-option[data-font="editorial"] .fs-option-preview { font-family: "Fraunces", serif; font-weight: 500; }
-    .fs-option[data-font="terminal"] .fs-option-preview { font-family: "JetBrains Mono", monospace; font-weight: 700; }
-    .fs-option[data-font="swiss"] .fs-option-preview { font-family: "Inter", sans-serif; font-weight: 900; letter-spacing: -0.03em; }
-    .fs-option[data-font="brutalist"] .fs-option-preview { font-family: "Archivo Black", sans-serif; }
-    .fs-option[data-font="space"] .fs-option-preview { font-family: "Space Grotesk", sans-serif; font-weight: 600; }
-
     /* Respect reduced motion */
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after {
@@ -336,10 +199,10 @@
     }
   </style>
 </head>
-<body data-font="editorial">
+<body data-font="space">
   <main class="container">
     <section class="hero">
-      <img src="/lemur-icon.svg" alt="Prosimian Labs" class="hero-logo" width="140" height="140">
+      <img src="/lemur-icon.svg" alt="Prosimian Labs" class="hero-logo" width="260" height="260">
       <h1>Prosimian Labs</h1>
       <p>Named for the small, curious primates that thrived in isolation on Madagascar. We build cutting-edge software with the same instincts &mdash; independent, deliberate, and shipped when it&rsquo;s ready, not when a roadmap says so.</p>
     </section>
@@ -383,84 +246,8 @@
     </div>
   </footer>
 
-  <!-- Font switcher widget (dev tool — remove once you pick a favorite) -->
-  <div id="font-switcher" class="font-switcher"></div>
-
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
-
-    // --- Font switcher ---
-    const FONTS = [
-      { id: "editorial", label: "Editorial Warm",     sub: "Fraunces · Inter",          preview: "Prosimian Labs" },
-      { id: "terminal",  label: "Terminal Hacker",    sub: "JetBrains Mono",            preview: "Prosimian Labs" },
-      { id: "swiss",     label: "Swiss Minimal",      sub: "Inter (heavy)",             preview: "Prosimian Labs" },
-      { id: "brutalist", label: "Brutalist",          sub: "Archivo Black · Space Gk",  preview: "Prosimian Labs" },
-      { id: "space",     label: "Space Modern",       sub: "Space Grotesk · IBM Plex",  preview: "Prosimian Labs" }
-    ];
-
-    const STORAGE_KEY = "pl-font";
-    const hostEl = document.getElementById("font-switcher");
-
-    function applyFont(id) {
-      if (!FONTS.find(f => f.id === id)) id = "editorial";
-      document.body.dataset.font = id;
-      try { localStorage.setItem(STORAGE_KEY, id); } catch {}
-      render();
-    }
-
-    function render() {
-      const active = document.body.dataset.font;
-      const state = hostEl.dataset.state || "collapsed";
-      if (state === "hidden") { hostEl.innerHTML = ""; return; }
-      if (state === "collapsed") {
-        const current = FONTS.find(f => f.id === active) || FONTS[0];
-        hostEl.innerHTML = `
-          <button type="button" class="fs-toggle" aria-expanded="false" aria-label="Open font switcher">
-            Font · ${current.label}
-          </button>
-        `;
-        hostEl.querySelector(".fs-toggle").addEventListener("click", () => {
-          hostEl.dataset.state = "open"; render();
-        });
-        return;
-      }
-      // state === "open"
-      hostEl.innerHTML = `
-        <div class="fs-panel" role="dialog" aria-label="Font switcher">
-          <header>
-            <span>Font test</span>
-            <span style="display:flex;gap:.5rem">
-              <button type="button" data-act="hide" title="Hide for this session" aria-label="Hide">×</button>
-              <button type="button" data-act="collapse" title="Collapse" aria-label="Collapse">–</button>
-            </span>
-          </header>
-          ${FONTS.map(f => `
-            <button type="button" class="fs-option" data-font="${f.id}" aria-pressed="${f.id === active}">
-              <div class="fs-option-title"><span class="dot"></span>${f.label}</div>
-              <div class="fs-option-preview">${f.preview}</div>
-              <div style="margin-top:.25rem;font-size:10.5px;color:var(--muted);letter-spacing:.04em">${f.sub}</div>
-            </button>
-          `).join("")}
-        </div>
-      `;
-      hostEl.querySelectorAll(".fs-option").forEach(btn => {
-        btn.addEventListener("click", () => applyFont(btn.dataset.font));
-      });
-      hostEl.querySelector('[data-act="collapse"]').addEventListener("click", () => {
-        hostEl.dataset.state = "collapsed"; render();
-      });
-      hostEl.querySelector('[data-act="hide"]').addEventListener("click", () => {
-        hostEl.dataset.state = "hidden"; render();
-      });
-    }
-
-    // Initialize
-    try {
-      const stored = localStorage.getItem(STORAGE_KEY);
-      if (stored) document.body.dataset.font = stored;
-    } catch {}
-    hostEl.dataset.state = "collapsed";
-    render();
   </script>
 </body>
 </html>
